@@ -3,6 +3,7 @@
 #include <fstream>
 #include <limits.h>
 #include <string>
+#include <unordered_map>
  
 using namespace std;
 
@@ -15,15 +16,29 @@ void GenerateRandGraph(int NOE, int NOV, enum Type type) {
 	for(int e = 0; e < NOE; e++){
 		edge[e] = new int[2];
 	}
+
+	unordered_map<string, bool> edgeCheck;
+
 	int i = 0;
 	// Build a connection between two random vertex.
 	while (i < NOE) {
 		edge[i][0] = rand() % NOV + 1;
 		edge[i][1] = rand() % NOV + 1;
- 
-		if(edge[i][0] == edge[i][1])
+		string f_edgeStr = to_string(edge[i][0]) + to_string(edge[i][1]);
+		string r_edgeStr = to_string(edge[i][1]) + to_string(edge[i][0]);
+		cout << f_edgeStr << endl; 
+		if(edge[i][0] == edge[i][1]){
 			continue;
-		else {
+		} else {
+			cout << f_edgeStr << endl;
+			try {
+				edgeCheck.at(f_edgeStr);
+				i--;
+			} catch (...) {
+				edgeCheck[f_edgeStr] = true;
+				edgeCheck[r_edgeStr] = true;
+			}
+		} /*else {
 			for(j = 0; j < i; j++) {
 				if((edge[i][0] == edge[j][0] && edge[i][1] == edge[j][1]) || (edge[i][0] == edge[j][1] && edge[i][1] == edge[j][0])){
 					i--;
@@ -31,6 +46,7 @@ void GenerateRandGraph(int NOE, int NOV, enum Type type) {
 				}
 			}
 		}
+		*/
 		i++;
 	}
 	string out;
@@ -47,6 +63,7 @@ void GenerateRandGraph(int NOE, int NOV, enum Type type) {
     	ofstream outFile(out);
 
     	i = 0;
+	outFile << NOV << endl;
     	while (i < NOE) {
     	        outFile << edge[i][0] - 1 << " " << edge[i][1] - 1 << " " << 1 + rand() % 20 << endl;
     	    i++;
