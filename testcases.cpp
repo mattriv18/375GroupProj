@@ -71,7 +71,7 @@ int main(int argc, char* argv[])
 		GenerateRandGraph(e, v, RANDOM);
 
 		// Dense Graph Generation
-		e = v * v;	
+		e = max;	
 		cout << "Generating Dense Graph => " << "V: " << v << "E: " << e << endl;
 		GenerateRandGraph(e, v, DENSE);
 
