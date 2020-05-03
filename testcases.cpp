@@ -5,13 +5,13 @@
 using namespace std;
  
 // A function to generate random graph.
-void GenerateRandGraphs(long NOE, int NOV) {
-	long j, edge[NOE][2], count;
-	long i = 0;
+void GenerateRandGraphs(int NOE, int NOV) {
+	int j, edge[NOE][2], count;
+	int i = 0;
 	// Build a connection between two random vertex.
 	while (i < NOE) {
-		edge[i][0] = (long) rand() % NOV + 1;
-		edge[i][1] = (long) rand() % NOV + 1;
+		edge[i][0] = rand() % NOV + 1;
+		edge[i][1] = rand() % NOV + 1;
  
 		if(edge[i][0] == edge[i][1])
 			continue;
@@ -24,7 +24,7 @@ void GenerateRandGraphs(long NOE, int NOV) {
 		i++;
 	}
  
-    ofstream outFile("output.txt");
+    ofstream outFile("testinput.txt");
 
     i = 0;
     while (i < NOE) {
@@ -57,7 +57,7 @@ void GenerateRandGraphs(long NOE, int NOV) {
  
 int main()
 {
-	long n, i, e, v, max;
+	int n, i, e, v, max;
  
 	cout<<"Random graph generation: ";
  
@@ -66,7 +66,7 @@ int main()
 	cout << "\nThe graph has " << v << " vertexes.";
 
     max = (((v * (v-1)) / 2) - 1);
-    if (max > RAND_MAX) max = RAND_MAX;
+    if (max >= INT_MAX) max = INT_MAX - 1;
 	e = 1 + rand() % max;
 	cout << "\nThe graph has " << e << " edges.\n";
  
