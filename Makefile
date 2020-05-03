@@ -5,10 +5,10 @@ M = matrixDijkstras
 all: $(H) $(L) $(M)
 
 testcases: testcases.o
-    g++ testcases.o -o testcases
+	g++ testcases.o -o testcases
 
 testcases.o: testcases.cpp
-    g++ -c -g testcases.cpp
+	g++ -c -g testcases.cpp
 
 $(H): $(H).o
 	g++ -g $(H).o -o $(H)
