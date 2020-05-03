@@ -1,15 +1,21 @@
 #include <iostream>
 #include <stdlib.h>
 #include <fstream>
+#include <limits.h>
  
 using namespace std;
  
 // A function to generate random graph.
 void GenerateRandGraphs(int NOE, int NOV) {
-	int j, edge[NOE][2], count;
+	int j, count;
+	int ** edge = new int*[NOE];
+	for(int e = 0; e < NOE; e++){
+		edge[e] = new int[2];
+	}
 	int i = 0;
 	// Build a connection between two random vertex.
 	while (i < NOE) {
+		cout << i << endl;
 		edge[i][0] = rand() % NOV + 1;
 		edge[i][1] = rand() % NOV + 1;
  
@@ -17,8 +23,10 @@ void GenerateRandGraphs(int NOE, int NOV) {
 			continue;
 		else {
 			for(j = 0; j < i; j++) {
-				if((edge[i][0] == edge[j][0] && edge[i][1] == edge[j][1]) || (edge[i][0] == edge[j][1] && edge[i][1] == edge[j][0]))
+				if((edge[i][0] == edge[j][0] && edge[i][1] == edge[j][1]) || (edge[i][0] == edge[j][1] && edge[i][1] == edge[j][0])){
 					i--;
+					break;
+				}
 			}
 		}
 		i++;
@@ -28,11 +36,16 @@ void GenerateRandGraphs(int NOE, int NOV) {
 
     i = 0;
     while (i < NOE) {
+    	    cout << i << endl;
             outFile << edge[i][0] - 1 << " " << edge[i][1] - 1 << " " << 1 + rand() % 20 << endl;
         i++;
     }
 
     outFile.close();
+    for(int e = 0; e < NOE; e++){
+	delete[] edge[e];
+    }
+    delete[] edge;
 
     /*
 	// Print the random graph.
