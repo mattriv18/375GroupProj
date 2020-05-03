@@ -4,6 +4,12 @@ M = matrixDijkstras
 
 all: $(H) $(L) $(M)
 
+testcases: testcases.o
+    g++ testcases.o -o testcases
+
+testcases.o: testcases.cpp
+    g++ -c -g testcases.cpp
+
 $(H): $(H).o
 	g++ -g $(H).o -o $(H)
 $(H).o: $(H).cpp Graph.h MinHeap.h
@@ -28,7 +34,7 @@ runlazyheap: $(L)
 runmatrix: $(M)
 	./$(M) testinput.txt
 clean:
-	rm *.o $(H) $(L) $(M)
+	rm *.o $(H) $(L) $(M) testcases
 memcheckheap: $(H)
 	valgrind --leak-check=full ./$(H) testinput.txt
 memchecklazyheap: $(L)
