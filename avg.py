@@ -12,7 +12,7 @@ for l in lines:
     count+=1
 
 m_s_avg = m_s_avg / count
-print("Average time for Matrix Dijkstra's with SPARSE graphs: " + str(m_s_avg) + "\n")
+print("Average time for Matrix Dijkstra's with SPARSE graphs: " + str(m_s_avg) + " microseconds")
 
 
 
@@ -28,7 +28,7 @@ for l in lines:
     count+=1
 
 m_d_avg = m_d_avg / count
-print("Average time for Matrix Dijkstra's with DENSE graphs: " + str(m_d_avg) + "\n")
+print("Average time for Matrix Dijkstra's with DENSE graphs: " + str(m_d_avg) + " microseconds")
 
 
 
@@ -44,10 +44,10 @@ for l in lines:
     count+=1
 
 m_r_avg = m_r_avg / count
-print("Average time for Matrix Dijkstra's with RANDOM graphs: " + str(m_r_avg) + "\n")
+print("Average time for Matrix Dijkstra's with RANDOM graphs: " + str(m_r_avg) + " microseconds")
 
 
-print("Combined Average time for Matrix Dijkstra's :" + (str((m_s_avg + m_d_avg + m_r_avg) / 3 )) + "\n")
+print("Combined Average time for Matrix Dijkstra's: " + str((m_s_avg + m_d_avg + m_r_avg) / 3 ) + " microseconds\n")
 
 
 
@@ -64,7 +64,7 @@ for l in lines:
     count+=1
 
 h_s_avg = h_s_avg / count
-print("Average time for Heap Dijkstra's with SPARSE graphs: " + str(h_s_avg) + "\n")
+print("Average time for Heap Dijkstra's with SPARSE graphs: " + str(h_s_avg) + " microseconds")
 
 
 
@@ -80,7 +80,7 @@ for l in lines:
     count += 1
 
 h_d_avg = h_d_avg / count
-print("Average time for Heap Dijkstra's with DENSE graphs: " + str(h_d_avg) + "\n")
+print("Average time for Heap Dijkstra's with DENSE graphs: " + str(h_d_avg) + " microseconds")
 
 
 
@@ -96,11 +96,11 @@ for l in lines:
     count+=1
 
 h_s_avg = h_s_avg / count
-print("Average time for Heap Dijkstra's with RANDOM graphs: " + str(h_s_avg) + "\n")
+print("Average time for Heap Dijkstra's with RANDOM graphs: " + str(h_s_avg) + " microseconds")
 
 
 
-print("Combined Average time for Heap Dijkstra's :" + (str((h_s_avg + h_d_avg + h_r_avg) / 3 )) + "\n")
+print("Combined Average time for Heap Dijkstra's: " + str((h_s_avg + h_d_avg + h_r_avg) / 3 ) + " microseconds\n")
 
 
 
@@ -117,7 +117,7 @@ for l in lines:
     count+=1
 
 lh_s_avg = lh_s_avg / count
-print("Average time for Lazy Heap Dijkstra's with SPARSE graphs:" + str(lh_s_avg) + "\n")
+print("Average time for Lazy Heap Dijkstra's with SPARSE graphs:" + str(lh_s_avg) + " microseconds")
 
 
 
@@ -133,7 +133,7 @@ for l in lines:
     count+=1
 
 lh_d_avg = lh_d_avg / count
-print("Average time for Lazy Heap Dijkstra's with DENSE graphs:" + str(lh_d_avg) + "\n")
+print("Average time for Lazy Heap Dijkstra's with DENSE graphs:" + str(lh_d_avg) + " microseconds")
 
 
 
@@ -149,8 +149,8 @@ for l in lines:
     count+=1
 
 lh_r_avg = lh_r_avg / count
-print("Average time for Lazy Heap Dijkstra's with RANDOM graphs:" + str(lh_r_avg) + "\n")
+print("Average time for Lazy Heap Dijkstra's with RANDOM graphs:" + str(lh_r_avg) + " microseconds")
 
 
 
-print("Combined Average time for Lazy Heap Dijkstra's :" + (str((lh_s_avg + lh_d_avg + lh_r_avg) / 3) + "\n")
+print("Combined Average time for Lazy Heap Dijkstra's: " + str((lh_s_avg + lh_d_avg + lh_r_avg) / 3) + " microseconds\n")

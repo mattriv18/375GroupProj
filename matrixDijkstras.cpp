@@ -104,14 +104,20 @@ int main(int argc, char *argv[]) {
 	auto end = chrono::high_resolution_clock::now();
 
 	auto duration = chrono::duration_cast<chrono::microseconds>(end - start);
+
+	// visual for distance array
+	/*
 	cout << V << "," << duration.count() << endl;
 	
-	/*
-	int * dist = Dijkstras(G, 0);
-	for(int i = 0; i < V; i++){
-		cout << dist[i] << endl;
+	cout << "dist[V] -> { " << dist[0];
+	for(int i = 1; i < V; i++){
+		cout << ", ";
+		if (i % 10 == 0) cout << "\n	     ";
+		cout << dist[i];
 	}
+	cout << " }" << endl;
 	*/
+	
 	deleteGraph(G);
 	delete[] dist;
 }
