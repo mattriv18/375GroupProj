@@ -24,9 +24,15 @@ $(M).o: $(M).cpp
 	g++ -g -c $(M).cpp -o $(M).o
 
 run: all
-	./$(H) tests/random/test6_random
-	./$(L) tests/random/test6_random
-	./$(M) tests/random/test6_random
+	./$(H) tests/random/test450_random
+	./$(L) tests/random/test450_random
+	./$(M) tests/random/test450_random
+	./$(H) tests/sparse/test450_sparse
+	./$(L) tests/sparse/test450_sparse
+	./$(M) tests/sparse/test450_sparse
+	./$(H) tests/dense/test450_dense
+	./$(L) tests/dense/test450_dense
+	./$(M) tests/dense/test450_dense
 runheap: $(H)
 	./$(H) testinput.txt
 runlazyheap: $(L)
