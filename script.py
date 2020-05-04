@@ -60,7 +60,7 @@ for i in range(5,501):
         continue
     print(i)
     #print("Running lazyheapDijkstras sparse...");
-    os.system("./lazyheapDijkstras tests/sparse/test" + str(i) + "_sparse >> heaptimes_sparse.txt")
+    os.system("./lazyheapDijkstras tests/sparse/test" + str(i) + "_sparse >> lazyheaptimes_sparse.txt")
 
     #print("Running lazyheapDijkstras dense...");
     os.system("./lazyheapDijkstras tests/dense/test" + str(i) + "_dense >> lazyheaptimes_dense.txt")
