@@ -26,8 +26,8 @@ void GenerateRandGraph(int NOE, int NOV, enum Type type) {
 		for (i = 0; i < (NOV + 1); i++) {
 			for (j = i + 1; j < NOV; j++) {
 				if (i == j) continue;
-				edge[e][0] = i + 2;
-				edge[e][1] = j + 2;
+				edge[e][0] = i + 1;
+				edge[e][1] = j + 1;
 				e++;
 			}
 		}
@@ -37,11 +37,11 @@ void GenerateRandGraph(int NOE, int NOV, enum Type type) {
 			edge[i][1] = rand() % NOV + 1;
 			string f_edgeStr = to_string(edge[i][0]) + to_string(edge[i][1]);
 			string r_edgeStr = to_string(edge[i][1]) + to_string(edge[i][0]);
-			cout << f_edgeStr << endl; 
+			cout << NOV << ": " << f_edgeStr << endl; 
 			if(edge[i][0] == edge[i][1]){
 				continue;
 			} else {
-				cout << f_edgeStr << endl;
+				cout << NOV << ": " << f_edgeStr << endl;
 				try {
 					edgeCheck.at(f_edgeStr);
 					i--;
