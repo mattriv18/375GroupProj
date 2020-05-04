@@ -61,7 +61,7 @@ int main(int argc, char* argv[]){
 	auto end = chrono::high_resolution_clock::now();
 
 	auto duration = chrono::duration_cast<chrono::microseconds>(end - start);
-	cout << V << " " << duration.count();
+	cout << V << "," << duration.count();
 	/*for(int i = 0; i < V; i++){
 		cout << dist[i] << endl;
 	}

@@ -104,7 +104,7 @@ int main(int argc, char *argv[]) {
 	auto end = chrono::high_resolution_clock::now();
 
 	auto duration = chrono::duration_cast<chrono::microseconds>(end - start);
-	cout << V << " " << duration.count();
+	cout << V << "," << duration.count();
 	
 	/*
 	int * dist = Dijkstras(G, 0);
