@@ -3,51 +3,51 @@
 m_s_avg = 0
 count = 0
 
-open('matrixtimes_sparse.txt', 'r') 
+file1 = open('matrixtimes_sparse.txt', 'r') 
 lines = file1.readlines() 
   
 for l in lines: 
-    linelist = l.strip(",")
-    m_s_avg += linelist[1]
-    count++
+    linelist = l.split(",")
+    m_s_avg += int(linelist[1])
+    count+=1
 
 m_s_avg = m_s_avg / count
-print("Average time for Matrix Dijkstra's with SPARSE graphs: " + m_s_avg + "\n")
+print("Average time for Matrix Dijkstra's with SPARSE graphs: " + str(m_s_avg) + "\n")
 
 
 
 m_d_avg = 0
 count = 0
 
-open('matrixtimes_dense.txt', 'r') 
+file1 =open('matrixtimes_dense.txt', 'r') 
 lines = file1.readlines() 
   
 for l in lines: 
-    linelist = l.strip(",")
-    m_d_avg += linelist[1]
-    count++
+    linelist = l.split(",")
+    m_d_avg += int(linelist[1])
+    count+=1
 
 m_d_avg = m_d_avg / count
-print("Average time for Matrix Dijkstra's with DENSE graphs: " + m_d_avg + "\n")
+print("Average time for Matrix Dijkstra's with DENSE graphs: " + str(m_d_avg) + "\n")
 
 
 
 m_r_avg = 0
 count = 0
 
-open('matrixtimes_random.txt', 'r') 
+file1 = open('matrixtimes_random.txt', 'r') 
 lines = file1.readlines() 
   
 for l in lines: 
-    linelist = l.strip(",")
-    m_r_avg += linelist[1]
-    count++
+    linelist = l.split(",")
+    m_r_avg += int(linelist[1])
+    count+=1
 
 m_r_avg = m_r_avg / count
-print("Average time for Matrix Dijkstra's with RANDOM graphs: " + m_r_avg + "\n")
+print("Average time for Matrix Dijkstra's with RANDOM graphs: " + str(m_r_avg) + "\n")
 
 
-print("Combined Average time for Matrix Dijkstra's :" + ((m_s_avg + m_d_avg + m_r_avg) / 3 ) + "\n")
+print("Combined Average time for Matrix Dijkstra's :" + (str((m_s_avg + m_d_avg + m_r_avg) / 3 )) + "\n")
 
 
 
@@ -55,52 +55,52 @@ print("Combined Average time for Matrix Dijkstra's :" + ((m_s_avg + m_d_avg + m_
 h_s_avg = 0
 count = 0
 
-open('heaptimes_sparse.txt', 'r') 
+file1 = open('heaptimes_sparse.txt', 'r') 
 lines = file1.readlines() 
   
 for l in lines: 
-    linelist = l.strip(",")
-    h_s_avg += linelist[1]
-    count++
+    linelist = l.split(",")
+    h_s_avg += int(linelist[1])
+    count+=1
 
 h_s_avg = h_s_avg / count
-print("Average time for Heap Dijkstra's with SPARSE graphs: " + h_s_avg + "\n")
+print("Average time for Heap Dijkstra's with SPARSE graphs: " + str(h_s_avg) + "\n")
 
 
 
 h_d_avg = 0
 count = 0
 
-open('heaptimes_dense.txt', 'r') 
+file1 = open('heaptimes_dense.txt', 'r') 
 lines = file1.readlines() 
   
 for l in lines: 
-    linelist = l.strip(",")
-    h_d_avg += linelist[1]
-    count++
+    linelist = l.split(",")
+    h_d_avg += int(linelist[1])
+    count += 1
 
 h_d_avg = h_d_avg / count
-print("Average time for Heap Dijkstra's with DENSE graphs: " + h_d_avg + "\n")
+print("Average time for Heap Dijkstra's with DENSE graphs: " + str(h_d_avg) + "\n")
 
 
 
 h_r_avg = 0
 count = 0
 
-open('heaptimes_random.txt', 'r') 
+file1 = open('heaptimes_random.txt', 'r') 
 lines = file1.readlines() 
   
 for l in lines: 
-    linelist = l.strip(",")
-    h_s_avg += linelist[1]
-    count++
+    linelist = l.split(",")
+    h_s_avg += int(linelist[1])
+    count+=1
 
 h_s_avg = h_s_avg / count
-print("Average time for Heap Dijkstra's with RANDOM graphs: " + h_s_avg + "\n")
+print("Average time for Heap Dijkstra's with RANDOM graphs: " + str(h_s_avg) + "\n")
 
 
 
-print("Combined Average time for Heap Dijkstra's :" + ((h_s_avg + h_d_avg + h_r_avg) / 3 ) + "\n")
+print("Combined Average time for Heap Dijkstra's :" + (str((h_s_avg + h_d_avg + h_r_avg) / 3 )) + "\n")
 
 
 
@@ -108,50 +108,49 @@ print("Combined Average time for Heap Dijkstra's :" + ((h_s_avg + h_d_avg + h_r_
 lh_s_avg = 0
 count = 0
 
-open('lazyheaptimes_sparse.txt', 'r') 
+file1 = open('lazyheaptimes_sparse.txt', 'r') 
 lines = file1.readlines() 
   
 for l in lines: 
-    linelist = l.strip(",")
-    lh_s_avg += linelist[1]
-    count++
+    linelist = l.split(",")
+    lh_s_avg += int(linelist[1])
+    count+=1
 
 lh_s_avg = lh_s_avg / count
-print("Average time for Lazy Heap Dijkstra's with SPARSE graphs:" + lh_s_avg + "\n")
+print("Average time for Lazy Heap Dijkstra's with SPARSE graphs:" + str(lh_s_avg) + "\n")
 
 
 
 lh_d_avg = 0
 count = 0
 
-open('lazyheaptimes_dense.txt', 'r') 
+file1 = open('lazyheaptimes_dense.txt', 'r') 
 lines = file1.readlines() 
   
 for l in lines: 
-    linelist = l.strip(",")
-    lh_d_avg += linelist[1]
-    count++
+    linelist = l.split(",")
+    lh_d_avg += int(linelist[1])
+    count+=1
 
 lh_d_avg = lh_d_avg / count
-print("Average time for Lazy Heap Dijkstra's with DENSE graphs:" + lh_d_avg + "\n")
+print("Average time for Lazy Heap Dijkstra's with DENSE graphs:" + str(lh_d_avg) + "\n")
 
 
 
 lh_r_avg = 0
 count = 0
 
-open('lazyheaptimes_random.txt', 'r') 
+file1 = open('lazyheaptimes_random.txt', 'r') 
 lines = file1.readlines() 
   
 for l in lines: 
-    linelist = l.strip(",")
-    lh_r_avg += linelist[1]
-    count++
+    linelist = l.split(",")
+    lh_r_avg += int(linelist[1])
+    count+=1
 
 lh_r_avg = lh_r_avg / count
-print("Average time for Lazy Heap Dijkstra's with RANDOM graphs:" + lh_r_avg + "\n")
+print("Average time for Lazy Heap Dijkstra's with RANDOM graphs:" + str(lh_r_avg) + "\n")
 
 
 
-print("Combined Average time for Lazy Heap Dijkstra's :" + ((lh_s_avg + lh_d_avg + lh_r_avg) / 3 ) + "\n")
-
+print("Combined Average time for Lazy Heap Dijkstra's :" + (str((lh_s_avg + lh_d_avg + lh_r_avg) / 3) + "\n")
