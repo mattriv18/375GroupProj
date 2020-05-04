@@ -24,9 +24,9 @@ $(M).o: $(M).cpp
 	g++ -g -c $(M).cpp -o $(M).o
 
 run: all
-	./$(H) testinput.txt
-	./$(L) testinput.txt
-	./$(M) testinput.txt
+	./$(H) tests/random/test6_random
+	./$(L) tests/random/test6_random
+	./$(M) tests/random/test6_random
 runheap: $(H)
 	./$(H) testinput.txt
 runlazyheap: $(L)
@@ -36,7 +36,7 @@ runmatrix: $(M)
 clean:
 	rm *.o $(H) $(L) $(M) testcases
 memcheckheap: $(H)
-	valgrind --leak-check=full ./$(H) testinput.txt
+	valgrind --leak-check=full ./$(H) tests/random/test6_random.txt
 memchecklazyheap: $(L)
 	valgrind --leak-check=full ./$(L) testinput.txt
 memcheckmatrix: $(M)

@@ -3,6 +3,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <chrono>
 #include "Graph.h"
 #include "MinHeap.h"
 
@@ -36,25 +37,35 @@ int * Dijkstras(Graph *G, int src){
 }
 
 int main(int argc, char* argv[]){
-	int V = 9;
-	Graph *G = new Graph(V);
+	Graph *G;
 
 	string in = argv[1];
 	ifstream infile(in);
 	
+	bool first = true;
 	string line;
-	int src, dest, weight;
+	int src, dest, weight, V;
 	while(getline(infile, line)){
 		stringstream s(line);
+		if(first){
+			s >> V;
+			G = new Graph(V);
+			first = !first;
+			continue;
+		}
 		s >> src >> dest >> weight;
-		G->addEdge(src, dest, weight);
-	
+		G->addEdge(src, dest, weight);	
 	}
-
+	auto start = chrono::high_resolution_clock::now();
 	int * dist = Dijkstras(G, 0);
-	for(int i = 0; i < V; i++){
+	auto end = chrono::high_resolution_clock::now();
+
+	auto duration = chrono::duration_cast<chrono::microseconds>(end - start);
+	cout << V << " " << duration.count();
+	/*for(int i = 0; i < V; i++){
 		cout << dist[i] << endl;
 	}
+	*/
 	delete G;
 	delete[] dist;
 }

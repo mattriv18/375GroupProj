@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <chrono>
 #include <queue>
 #include <vector>
 #include <limits.h>
@@ -71,24 +72,38 @@ int * Graph::Dijkstras(int src){
 }
 
 int main(int argc, char* argv[]){
-	int V = 9;
-	Graph G(V);
+	Graph * G;
 
 	string in = argv[1];
 	ifstream infile(in);
 	
+	bool first = true;
 	string line;
-	int src, dest, weight;
+	int src, dest, weight, V;
 	while(getline(infile, line)){
 		stringstream s(line);
+		if(first){
+			s >> V;
+			G = new Graph(V);
+			first = !first;
+			continue;
+		}
 		s >> src >> dest >> weight;
-		G.addEdge(src, dest, weight);
+		G->addEdge(src, dest, weight);
 	
 	}
-	int * dist = G.Dijkstras(0);
+	
+	auto start = chrono::high_resolution_clock::now();
+	int * dist = G->Dijkstras(0);
+	auto end = chrono::high_resolution_clock::now();
+
+	auto duration = chrono::duration_cast<chrono::microseconds>(end - start);
+	cout << V << " " << duration.count();
+
+	/*int * dist = G.Dijkstras(0);
 	for(int i = 0; i < V; i++){
 		cout << dist[i] << endl;
-	}
+	}*/
 	delete dist;
 }
 
